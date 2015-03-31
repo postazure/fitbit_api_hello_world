@@ -5,10 +5,12 @@ class FitbitAuthController < ApplicationController
 
   def get_response
     # Callback from Fitbit Oauth
+
+    # Oauth Access Credentials
     oauth_token = params[:oauth_token]
     oauth_verifier = params[:oauth_verifier]
 
-    # User Information and Access Credentials
+    # User Information and User Access Credentials
     fitbit_data  = JSON.parse(MultiJson.encode(request.env['omniauth.auth']))
 
     # Get User Activity Information
@@ -33,6 +35,7 @@ private
       user_id: fitbit_user_id,
     })
 
+    # Reconnects existing user using the information above
     access_token = client.reconnect(user_token, user_secret)
 
     # client.activities_on_date('2015-03-25') <- Specific Date

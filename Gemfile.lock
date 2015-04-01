@@ -129,7 +129,6 @@ DEPENDENCIES
   fitgem
   jbuilder (~> 2.0)
   jquery-rails
-  multi_json
   omniauth-fitbit
   pg
   rails (= 4.1.8)

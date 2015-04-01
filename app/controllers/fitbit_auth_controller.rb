@@ -11,7 +11,7 @@ class FitbitAuthController < ApplicationController
     oauth_verifier = params[:oauth_verifier]
 
     # User Information and User Access Credentials
-    fitbit_data  = JSON.parse(MultiJson.encode(request.env['omniauth.auth']))
+    fitbit_data  = request.env['omniauth.auth']
 
     # Get User Activity Information
     activities = get_user_activities(fitbit_data)

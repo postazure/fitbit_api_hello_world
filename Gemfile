@@ -13,7 +13,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Fitbit
 gem 'omniauth-fitbit'
 gem 'fitgem'
-gem 'multi_json'
 
 # Environmental Variables
 gem 'dotenv-rails'
